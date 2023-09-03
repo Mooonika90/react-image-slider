@@ -57,29 +57,29 @@ code {
 		monospace;
 }
 
-header,
 main {
 	width: clamp(20rem, 60vw, 46rem);
-	margin: 1rem auto;
-}
-main {
+	margin: 3rem auto;
 	flex: 1 0;
 }
-h2 {
-	margin: 1rem;
+
+h1 {
+	margin: 2rem;
 }
-article {
+div {
 	position: relative;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 }
 
-article h3 {
+div h2 {
 	position: absolute;
-	background-color: rgba(161, 219, 219, 0.7);
+	background-color: rgb(141, 157, 182, 0.8);
 	padding: 0.5rem 2rem;
 	margin: 1rem;
+	color: #36486b;
+	border-radius: 0.6rem;
 }
 img {
 	border-radius: 1rem;
@@ -89,11 +89,24 @@ img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 1rem;
-	margin: 2rem;
+	gap: 2rem;
+	margin: 3rem;
 }
 button {
 	cursor: pointer;
+	text-transform: uppercase;
+	padding: 0.6rem 1rem;
+	border-radius: 0.6rem;
+	border: none;
+	background-color: #8d9db6;
+	opacity: 1;
+	color: #36486b;
+	box-shadow: 0.3rem 0.3rem 1.5rem #36486b;
+	transition: background 0.5s linear;
+}
+
+button:hover {
+	background-color: #d7dbe2;
 }
 
 @media (max-width: 50rem) {

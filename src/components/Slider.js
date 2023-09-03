@@ -1,6 +1,7 @@
+import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { SlidesData } from '../data/SlidesData';
-const TIMEOUT = 1000;
+const TIMEOUT = 2000;
 
 function Slider() {
 	const [slideIndex, setSlideIndex] = useState(0);
@@ -45,14 +46,20 @@ function Slider() {
 	};
 	return (
 		<section>
-			<h2>Welcome in my slider</h2>
-			<article>
-				<h3>{SlidesData[slideIndex].title}</h3>
+			<h1>React Slider Component</h1>
+			<motion.div
+				className='slide'
+				initial={{ opacity: 0, y: 20 }}
+				animate={{ opacity: 1, y: 0 }}
+				exit={{ opacity: 0, y: 20 }}
+				transition={{ duration: 0.5 }}>
+				<h2>{SlidesData[slideIndex].title}</h2>
 				<img
 					src={SlidesData[slideIndex].imageUrl}
 					alt={SlidesData[slideIndex].title}
 				/>
-			</article>
+			</motion.div>
+
 			<ControlButtons />
 		</section>
 	);
