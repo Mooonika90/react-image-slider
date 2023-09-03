@@ -18,29 +18,34 @@ function Slider() {
 		return () => {
 			clearInterval(intervalId);
 		};
-	}, [setSlideShow, slideIndex]);
-
-	const navigate = (step) => {
-		const newIndex =
-			(slideIndex + step + SlidesData.length) % SlidesData.length;
-		setSlideIndex(newIndex);
-	};
+	}, [slideShow, slideIndex]);
 
 	const ControlButtons = () => {
 		return (
 			<div className='control-btns'>
-				<button onClick={() => navigate(-1)}>Prev</button>
-				<button onClick={() => navigate(1)}>Next</button>
+				<button
+					onClick={() =>
+						setSlideIndex(
+							(prevIndex) =>
+								(prevIndex - 1 + SlidesData.length) % SlidesData.length
+						)
+					}>
+					Prev
+				</button>
+				<button
+					onClick={() =>
+						setSlideIndex((prevIndex) => (prevIndex + 1) % SlidesData.length)
+					}>
+					Next
+				</button>
 				<button onClick={() => setSlideShow(true)}>Start</button>
 				<button onClick={() => setSlideShow(false)}>Stop</button>
 			</div>
 		);
 	};
-
 	return (
 		<section>
 			<h2>Welcome in my slider</h2>
-
 			<article>
 				<h3>{SlidesData[slideIndex].title}</h3>
 				<img
