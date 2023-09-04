@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { SlidesData } from '../data/SlidesData';
 const TIMEOUT = 2000;
@@ -47,19 +47,23 @@ function Slider() {
 	return (
 		<section>
 			<h1>React Slider Component</h1>
-			<motion.div
-				className='slide'
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				exit={{ opacity: 0, y: 20 }}
-				transition={{ duration: 0.5 }}>
-				<h2>{SlidesData[slideIndex].title}</h2>
-				<img
-					src={SlidesData[slideIndex].imageUrl}
-					alt={SlidesData[slideIndex].title}
-				/>
-			</motion.div>
-
+			<article>
+				<AnimatePresence>
+					<motion.article
+						className='slide'
+						key={slideIndex}
+						initial={{ x: 200, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						exit={{ x: -200, opacity: 0 }}
+						transition={{ duration: 1 }}>
+						<h2>{SlidesData[slideIndex].title}</h2>
+						<img
+							src={SlidesData[slideIndex].imageUrl}
+							alt={SlidesData[slideIndex].title}
+						/>
+					</motion.article>
+				</AnimatePresence>
+			</article>
 			<ControlButtons />
 		</section>
 	);

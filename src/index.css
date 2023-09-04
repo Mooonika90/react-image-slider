@@ -66,14 +66,14 @@ main {
 h1 {
 	margin: 2rem;
 }
-div {
+article {
 	position: relative;
 	display: flex;
 	align-items: flex-end;
 	justify-content: center;
 }
 
-div h2 {
+article h2 {
 	position: absolute;
 	background-color: rgb(141, 157, 182, 0.8);
 	padding: 0.5rem 2rem;
@@ -89,6 +89,7 @@ img {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-wrap: wrap;
 	gap: 2rem;
 	margin: 3rem;
 }
@@ -112,5 +113,6 @@ button:hover {
 @media (max-width: 50rem) {
 	img {
 		max-width: 20rem;
+		height: 100%;
 	}
 }
