@@ -41,6 +41,11 @@ fieldset {
 ul {
 	list-style: none;
 }
+
+:root {
+	--white: #f0f0f0;
+	--dark-blue: #2a384c;
+}
 body {
 	height: 100%;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -50,6 +55,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	margin: 0 auto;
+	background-color: var(--white);
+	color: var(--dark-blue);
 }
 
 code {
@@ -58,13 +65,17 @@ code {
 }
 
 main {
-	width: clamp(20rem, 60vw, 46rem);
+	width: clamp(20rem, 100vw, 50rem);
 	margin: 3rem auto;
 	flex: 1 0;
+	padding: 1rem;
 }
 
 h1 {
-	margin: 2rem;
+	margin: 3rem auto;
+	font-size: 2rem;
+	text-transform: uppercase;
+	letter-spacing: 0.3rem;
 }
 article {
 	position: relative;
@@ -78,12 +89,13 @@ article h2 {
 	background-color: rgb(141, 157, 182, 0.8);
 	padding: 0.5rem 2rem;
 	margin: 1rem;
-	color: #36486b;
 	border-radius: 0.6rem;
 }
 img {
+	width: clamp(20rem, 100%, 50rem);
 	border-radius: 1rem;
-	object-fit: contain;
+	object-fit: cover;
+	box-shadow: 0.3rem 0.3rem 1.5rem var(--dark-blue);
 }
 .control-btns {
 	display: flex;
@@ -99,20 +111,13 @@ button {
 	padding: 0.6rem 1rem;
 	border-radius: 0.6rem;
 	border: none;
-	background-color: #8d9db6;
+	background-color: #a0b2c2;
 	opacity: 1;
-	color: #36486b;
-	box-shadow: 0.3rem 0.3rem 1.5rem #36486b;
+	color: var(--dark-blue);
+	box-shadow: 0.3rem 0.3rem 1.5rem var(--dark-blue);
 	transition: background 0.5s linear;
 }
 
 button:hover {
-	background-color: #d7dbe2;
-}
-
-@media (max-width: 50rem) {
-	img {
-		max-width: 20rem;
-		height: 100%;
-	}
+	background-color: #d1d9df;
 }

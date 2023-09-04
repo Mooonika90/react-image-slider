@@ -46,7 +46,6 @@ function Slider() {
 	};
 	return (
 		<section>
-			<h1>React Slider Component</h1>
 			<article>
 				<AnimatePresence>
 					<motion.article
